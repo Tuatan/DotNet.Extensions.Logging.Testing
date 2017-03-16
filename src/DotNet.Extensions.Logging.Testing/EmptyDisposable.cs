@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Extensions.Logging.Testing
+namespace DotNet.Extensions.Logging.Testing
 {
     internal sealed class EmptyDisposable : IDisposable
     {

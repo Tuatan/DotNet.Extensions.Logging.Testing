@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 
-namespace Extensions.Logging.Testing
+namespace DotNet.Extensions.Logging.Testing
 {
     /// <summary>
     /// Logger provider that creates test loggers.

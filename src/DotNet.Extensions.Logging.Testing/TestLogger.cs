@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using Microsoft.Extensions.Logging;
 
-namespace Extensions.Logging.Testing
+namespace DotNet.Extensions.Logging.Testing
 {
     /// <summary>
     /// Test logger implementation that accumulates all log entries.

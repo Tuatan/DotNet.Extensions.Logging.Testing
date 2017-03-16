@@ -1,13 +1,13 @@
-﻿namespace Microsoft.Extensions.Logging.Test
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
+namespace DotNet.Extensions.Logging.Testing
+{
 #if (NET45)
 
-    using System.Linq;
-    using System.Runtime.Remoting.Messaging;
     using System.Collections.Immutable;
+    using System.Runtime.Remoting.Messaging;
+    using System.Linq;
 
     internal static class LogScope
     {

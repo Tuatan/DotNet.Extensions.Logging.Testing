@@ -1,8 +1,7 @@
 using System;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Test;
 
-namespace Extensions.Logging.Testing
+namespace DotNet.Extensions.Logging.Testing
 {
     /// <summary>
     /// Logger implementation that publishes all log entries to the specified IObserver.

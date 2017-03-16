@@ -2,9 +2,8 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Test;
 
-namespace Extensions.Logging.Testing
+namespace DotNet.Extensions.Logging.Testing
 {
     /// <summary>
     /// Logger provider that creates test loggers.
