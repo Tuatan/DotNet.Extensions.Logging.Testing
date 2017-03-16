@@ -20,12 +20,12 @@
     "owners": [ "SergeyBaranchenkov", "anastasiab" ]
   },
 
-  "version": "0.9.2-*",
+  "version": "0.9.3-*",
 
   "dependencies": { "Microsoft.Extensions.Logging.Abstractions": "1.1.0" },
 
   "frameworks": {
-    "netstandard1.6": {
+    "netstandard1.1": {
       "dependencies": {
         "NETStandard.Library": "1.6.1"
       }
