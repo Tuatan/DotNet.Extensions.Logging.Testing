@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.suo
+/.vs/restore.dg
+/src/Extensions.Logging.Testing/obj/Debug
+/src/Extensions.Logging.Testing/bin/Debug
+/test/Extensions.Logging.Testing.Test/bin/Debug/netcoreapp1.0
+/test/Extensions.Logging.Testing.Test/obj/Debug
+*.user
+/test/Extensions.Logging.Testing.Test/project.lock.json
+/src/Extensions.Logging.Testing/project.lock.json
