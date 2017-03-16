@@ -11,3 +11,5 @@
 *.user
 /test/Extensions.Logging.Testing.Test/project.lock.json
 /src/Extensions.Logging.Testing/project.lock.json
+/src/DotNet.Extensions.Logging.Testing/bin/Debug
+/src/DotNet.Extensions.Logging.Testing/obj/Debug
