@@ -1,28 +1,26 @@
 {
   "name": "DotNet.Extensions.Logging.Testing",
   "title": "Test and Observable loggers for Microsoft.Extensions.Logging",
-  "description": "All you need to have (scopes are supported!) for unit testing of components depending on Microsoft.Extensions.Logging.",
+  "description": "All you need to have (scopes are supported) for unit testing of components depending on Microsoft.Extensions.Logging.",
   "authors": [ "SergeyBaranchenkov", "anastasiab" ],
   "language": "en-US",
   "copyright": "Copyright © Sergey Baranchenkov. All Rights Reserved",
   "packOptions": {
     "projectUrl": "https://github.com/Tuatan/DotNet.Extensions.Logging.Testing",
+    "licenseUrl": "https://github.com/Tuatan/DotNet.Extensions.Logging.Testing/blob/master/LICENSE",
     "summary": "",
     "tags": [ "Microsoft.Extensions.Logging", "Test" ],
     "releaseNotes": "Initial draft release",
     "requireLicenseAcceptance": false,
-    "licenseUrl": "https://github.com/Tuatan/DotNet.Extensions.Logging.Testing/blob/master/LICENSE",
     "repository": {
       "type": "git",
       "url": "https://github.com/Tuatan/DotNet.Extensions.Logging.Testing.git"
     },
-    "owners": [
-      "SergeyBaranchenkov",
-      "anastasiab"
-    ]
+    "authors": [ "SergeyBaranchenkov", "anastasiab" ],
+    "owners": [ "SergeyBaranchenkov", "anastasiab" ]
   },
 
-  "version": "0.9.1-*",
+  "version": "0.9.2-*",
 
   "dependencies": { "Microsoft.Extensions.Logging.Abstractions": "1.1.0" },
 
