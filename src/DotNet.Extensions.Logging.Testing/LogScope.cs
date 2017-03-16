@@ -2,7 +2,65 @@
 {
     using System;
     using System.Collections.Generic;
+
+#if (NET45)
+
     using System.Linq;
+    using System.Runtime.Remoting.Messaging;
+    using System.Collections.Immutable;
+
+    internal static class LogScope
+    {
+        private static readonly string name = Guid.NewGuid().ToString("N");
+
+        private sealed class Wrapper : MarshalByRefObject
+        {
+            public ImmutableStack<object> Value { get; set; }
+        }
+
+        private static ImmutableStack<object> CurrentContext
+        {
+            get
+            {
+                var ret = CallContext.LogicalGetData(name) as Wrapper;
+                return ret == null ? ImmutableStack.Create<object>() : ret.Value;
+            }
+
+            set
+            {
+                CallContext.LogicalSetData(name, new Wrapper { Value = value });
+            }
+        }
+
+        public static IDisposable Push(string name, object state)
+        {
+            CurrentContext = CurrentContext.Push(state);
+            return new DisposableScope();
+        }
+
+        public static IReadOnlyCollection<object> GetState()
+        {
+            return CurrentContext.Reverse().ToArray();
+        }
+
+        private sealed class DisposableScope : IDisposable
+        {
+            private bool disposed;
+
+            public void Dispose()
+            {
+                if (this.disposed)
+                    return;
+
+                CurrentContext = CurrentContext.Pop();
+
+                this.disposed = true;
+            }
+        }
+    }
+
+#else
+
     using System.Threading;
 
     internal sealed class LogScope
@@ -81,4 +139,5 @@
             }
         }
     }
+#endif
 }
