@@ -2,7 +2,7 @@
   "name": "DotNet.Extensions.Logging.Testing",
   "title": "Test and Observable loggers for Microsoft.Extensions.Logging",
   "description": "All you need to have (scopes are supported!) for unit testing of components depending on Microsoft.Extensions.Logging.",
-  "authors": [ "sergey.baranchenkov", "abaranch" ],
+  "authors": [ "SergeyBaranchenkov", "anastasiab" ],
   "language": "en-US",
   "copyright": "Copyright © Sergey Baranchenkov. All Rights Reserved",
   "packOptions": {
@@ -22,7 +22,7 @@
     ]
   },
 
-  "version": "0.9.0-*",
+  "version": "0.9.1-*",
 
   "dependencies": { "Microsoft.Extensions.Logging.Abstractions": "1.1.0" },
 
