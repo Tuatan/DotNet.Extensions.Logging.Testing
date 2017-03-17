@@ -21,3 +21,17 @@ Test and Observable loggers for Microsoft.Extensions.Logging.
   Assert.AreEquals(5, logCollector.Logs);
 ```
 
+## Using LogCollector to collect logs produced by a component that depends on ILogger<>
+
+```csharp
+  var logCollector = new LogCollector<MyClass>();
+  
+  using(logCollector.CollectLogs())
+  {
+    ILogger<MyClass> logger = logCollector.Logger;
+    
+    // code that uses logger instance.
+  }
+  
+  Assert.AreEquals(5, logCollector.Logs);
+```
