@@ -1,4 +1,5 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/gor9xoo1tibmiuqi?svg=true)](https://ci.appveyor.com/project/SergeyBaranchenkov/dotnet-extensions-logging-testing)
+[![Nuget](https://img.shields.io/nuget/vpre/DotNet.Extensions.Logging.Testing.svg)](https://www.nuget.org/packages/DotNet.Extensions.Logging.Testing/)
 
 # DotNet.Extensions.Logging.Testing
 
