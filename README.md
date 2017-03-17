@@ -35,3 +35,19 @@ Test and Observable loggers for Microsoft.Extensions.Logging.
   
   Assert.AreEquals(5, logCollector.Logs);
 ```
+
+## Using ObservableLogger to dump logs produced by a component that depends on ILogger
+
+```csharp
+  using (var subject = new Subject<LogEvent>();
+  using (var logger = new ObservableLogger("Category", (a,b) => true, subject))
+  {
+    subject.Dump();
+     
+    // code that uses logger instance.
+  
+    Console.ReadLine();
+  }  
+```
+
+
