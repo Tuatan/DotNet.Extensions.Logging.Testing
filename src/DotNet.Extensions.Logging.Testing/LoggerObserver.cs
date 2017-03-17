@@ -9,7 +9,11 @@ namespace DotNet.Extensions.Logging.Testing
 
         public LoggerObserver(string category, IObserver<Tuple<string, LogEvent>> parent)
         {
-            if (parent == null) throw new ArgumentNullException(nameof(parent));
+            if (parent == null)
+            {
+                throw new ArgumentNullException(nameof(parent));
+            }
+
             _category = category;
             _parent = parent;
         }

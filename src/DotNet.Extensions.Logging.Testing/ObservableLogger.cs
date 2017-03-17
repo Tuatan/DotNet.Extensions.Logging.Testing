@@ -6,7 +6,7 @@ namespace DotNet.Extensions.Logging.Testing
     /// <summary>
     /// Logger implementation that publishes all log entries to the specified IObserver.
     /// </summary>
-    public sealed class ObservableLogger : ILogger, IDisposable
+    public class ObservableLogger : ILogger, IDisposable
     {
         private IObserver<LogEvent> _logObserver;
         private readonly Func<string, LogLevel, bool> filter;
@@ -16,13 +16,21 @@ namespace DotNet.Extensions.Logging.Testing
         /// </summary>
         /// <param name="name">Name of the logger instance.</param>
         /// <param name="filter">Filter function.</param>
-        /// <param name="logObserver"></param>
+        /// <param name="logObserver">Observer that receives log entries.</param>
         public ObservableLogger(string name, Func<string, LogLevel, bool> filter, IObserver<LogEvent> logObserver)
         {
             if (name == null)
+            {
                 throw new ArgumentNullException(nameof(name));
-            if (filter == null) throw new ArgumentNullException(nameof(filter));
-            if (logObserver == null) throw new ArgumentNullException(nameof(logObserver));
+            }
+            if (filter == null)
+            {
+                throw new ArgumentNullException(nameof(filter));
+            }
+            if (logObserver == null)
+            {
+                throw new ArgumentNullException(nameof(logObserver));
+            }
 
             this.Name = name;
             this.filter = filter;
@@ -98,4 +106,20 @@ namespace DotNet.Extensions.Logging.Testing
             }
         }
     }
+
+    /// <summary>
+    /// Logger implementation that publishes all log entries to the specified IObserver.
+    /// </summary>
+    public sealed class ObservableLogger<T> : ObservableLogger, ILogger<T>
+    {
+        /// <summary>
+        /// Creates an instance of <see cref="ObservableLogger"/> class.
+        /// </summary>
+        /// <param name="filter">Filter function.</param>
+        /// <param name="logObserver">Observer that receives log entries.</param>
+        public ObservableLogger(Func<string, LogLevel, bool> filter, IObserver<LogEvent> logObserver) 
+            : base(typeof(T).FullName, filter, logObserver)
+        {
+        }
+    } 
 }

@@ -7,13 +7,17 @@ using Microsoft.Extensions.Logging;
 namespace DotNet.Extensions.Logging.Testing
 {
     /// <summary>
-    /// Logger provider that creates test loggers.
+    /// Logger provider that creates observable loggers.
     /// </summary>
     public sealed class ObservableLoggerProvider : ILoggerProvider
     {
         private readonly IObserver<Tuple<string, LogEvent>> _observer;
         private ConcurrentDictionary<string, ILogger> loggers = new ConcurrentDictionary<string, ILogger>();
 
+        /// <summary>
+        /// Creates an instance of <see cref="ObservableLoggerProvider"/> class.
+        /// </summary>
+        /// <param name="observer">Observer that receives log entries.</param>
         public ObservableLoggerProvider(IObserver<Tuple<string, LogEvent>> observer)
         {
             if (observer == null) throw new ArgumentNullException(nameof(observer));

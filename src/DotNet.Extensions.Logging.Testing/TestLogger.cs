@@ -7,7 +7,7 @@ namespace DotNet.Extensions.Logging.Testing
     /// <summary>
     /// Test logger implementation that accumulates all log entries.
     /// </summary>
-    public sealed class TestLogger : ILogger, IObserver<LogEvent>
+    public class TestLogger : ILogger, IObserver<LogEvent>
     {
         private readonly Func<string, LogLevel, bool> filter;
         private readonly ObservableLogger logger;
@@ -115,6 +115,21 @@ namespace DotNet.Extensions.Logging.Testing
             }
 
             this.logEntries.Enqueue(value);
+        }
+    }
+
+    /// <summary>
+    /// Test logger implementation that accumulates all log entries.
+    /// </summary>
+    public sealed class TestLogger<T> : TestLogger, ILogger<T>
+    {
+        /// <summary>
+        /// Creates an instance of <see cref="TestLogger"/> class.
+        /// </summary>
+        /// <param name="filter">Filter function.</param>
+        public TestLogger(Func<string, LogLevel, bool> filter) 
+            : base(typeof(T).FullName, filter)
+        {
         }
     }
 }

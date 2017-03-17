@@ -6,7 +6,7 @@ namespace DotNet.Extensions.Logging.Testing
     /// <summary>
     /// Empty logger implementation that only validates the input.
     /// </summary>
-    public sealed class EmptyLogger : ILogger
+    public class EmptyLogger : ILogger
     {
         /// <summary>
         /// Default immutable instance of <see cref="EmptyLogger"/> class.
@@ -49,5 +49,12 @@ namespace DotNet.Extensions.Logging.Testing
         {
             return EmptyDisposable.Default;
         }
+    }
+
+    /// <summary>
+    /// Empty logger implementation that only validates the input.
+    /// </summary>
+    public sealed class EmptyLogger<T> : EmptyLogger, ILogger<T>
+    {
     }
 }
