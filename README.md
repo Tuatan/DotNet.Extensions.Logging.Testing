@@ -3,7 +3,7 @@
 
 # DotNet.Extensions.Logging.Testing
 
-Test and Observable loggers for Microsoft.Extensions.Logging.
+Test and Observable loggers for [Microsoft.Extensions.Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging/).
 
 # Usage
 
